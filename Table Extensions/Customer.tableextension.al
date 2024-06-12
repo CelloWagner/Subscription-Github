@@ -29,5 +29,8 @@ tableextension 50103 "BCT Customer Ext" extends Customer
         {
             Caption = 'JC_Test';
         }
+         field(50206; "DC Test"; Text[50])
+        {
+        }
     }
 }

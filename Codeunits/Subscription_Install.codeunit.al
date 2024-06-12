@@ -10,6 +10,7 @@ codeunit 50102 "BCT SubscriptionInstall"
         PBATest();
         RMA_Test();
         JC_TEST();
+        DC_Test();
     end;
 
     trigger OnInstallAppPerDatabase();
@@ -69,5 +70,16 @@ codeunit 50102 "BCT SubscriptionInstall"
         JC_Test.Code := 'JC';
         JC_Test.Description := 'Jack Callaghan';
         if JC_Test.Insert() then;
+    end;
+
+    local procedure DC_Test()
+    var
+        DCTest: Record "DC Test";
+    begin
+        DCTest.Init();
+        DCTest.Code := 'DC';
+        DCTest.Description := 'David Currie';
+        if DCTest.Insert() then
+        ;
     end;
 }
