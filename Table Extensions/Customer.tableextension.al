@@ -11,6 +11,10 @@ tableextension 50103 "BCT Customer Ext" extends Customer
             Editable = false;
         }
 
+        field(50200; "BVE_Test"; Text[50])
+        {
+            Caption = 'Description BVE';
+        }
 
         field(50211; Init_Test; Text[50])
         {
@@ -42,7 +46,6 @@ tableextension 50103 "BCT Customer Ext" extends Customer
         {
             Caption = 'MJA Test';
         }
-    
         field(50210; "JR_Test"; Text[50])
         {
             Caption = 'JR Test';
