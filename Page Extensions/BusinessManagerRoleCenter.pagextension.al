@@ -1,5 +1,6 @@
 pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role Center"
 {
+
     actions
     {
         addlast(Embedding)
@@ -23,12 +24,43 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 Caption = 'JS';
                 image = User;
                 RunObject = page JS_TestList;
-}
+                ApplicationArea = All;     
+    
+            }
             action("PBA Test")
             {
                 Caption = 'PBA  Test';
                 image = InsuranceRegisters;
                 RunObject = page "PBA Test List";
+                                ApplicationArea = All;
+            }
+            action("RMA Testlist")
+            {
+                Caption = 'RMA TestList';
+                image = Absence;
+                RunObject = page "RMA Test List";
+                                ApplicationArea = All;
+            }
+            action("JC_Test")
+            {
+                Caption = 'JC Test';
+                RunObject = page JC_TestList;
+                ApplicationArea = All;
+                Image = ListPage;
+            }
+            action(DC_Test)
+            {
+                ApplicationArea = All;
+                Image = ListPage;
+                RunObject = page "DC_Test List";
+                Caption = 'DC_Test';
+            }
+
+            action("EF Test")
+            {
+                Caption = 'EF Test';
+                image = InsuranceRegisters;
+                RunObject = page "EF Test List";
                 ApplicationArea = All;
             }
         }
@@ -43,16 +75,23 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                     Caption = 'Create Subscription Invoices';
                     image = CreateJobSalesInvoice;
                     RunObject = report "BCT Create Invoices";
-                    ApplicationArea = All;
+                                    ApplicationArea = All;
                 }
                 action("BCT Subscription Customers")
                 {
                     Caption = 'Subscription Customers';
                     image = Report;
-                    RunObject = report "BCT Subscription Customers";
+                                RunObject = report "BCT Subscription Customers";
+                                ApplicationArea = All;
+                }
+                action(PageRunCLP)
+                {
+                    Caption = 'CLP lists';
+                    RunObject = Page CLP_TestLisl;
                     ApplicationArea = All;
                 }
             }
         }
     }
+
 }
