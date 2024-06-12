@@ -21,6 +21,6 @@ codeunit 50102 "BCT SubscriptionInstall"
         JC_Test.Init();
         JC_Test.Code := 'JC';
         JC_Test.Description := 'Jack Callaghan';
-        JC_Test.Insert();
+        if JC_Test.Insert() then;
     end;
 }
