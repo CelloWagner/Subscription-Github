@@ -1,5 +1,6 @@
 pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role Center"
 {
+
     actions
     {
         addlast(Embedding)
@@ -61,7 +62,14 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                                 RunObject = report "BCT Subscription Customers";
                                 ApplicationArea = All;
                 }
+                action(PageRunCLP)
+                {
+                    Caption = 'CLP lists';
+                    RunObject = Page CLP_TestLisl;
+                    ApplicationArea = All;
+                }
             }
         }
     }
+
 }
