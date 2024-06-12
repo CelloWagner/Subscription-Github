@@ -49,6 +49,13 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 Caption = 'DC_Test';
             }
 
+            action("EF Test")
+            {
+                Caption = 'EF Test';
+                image = InsuranceRegisters;
+                RunObject = page "EF Test List";
+                ApplicationArea = All;
+            }
         }
         addafter("Create Vendor Payments")
         {
