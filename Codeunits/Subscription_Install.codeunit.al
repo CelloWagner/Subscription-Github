@@ -18,6 +18,8 @@ codeunit 50102 "BCT SubscriptionInstall"
     var
         RMATable: Record "RMA Table";
     begin
+        if RMATable.Get('RMA') then
+            exit;
         RMATable.Init();
         RMATable.Validate(Code, 'RMA');
         RMATable.Validate(Description, 'Rubén Miranda');
