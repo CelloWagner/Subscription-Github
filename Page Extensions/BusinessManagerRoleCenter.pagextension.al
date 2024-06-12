@@ -16,6 +16,12 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 Caption = 'JS';
                 image = User;
                 RunObject = page JS_TestList;
+}
+            action("PBA Test")
+            {
+                Caption = 'PBA  Test';
+                image = InsuranceRegisters;
+                RunObject = page "PBA Test List";
                 ApplicationArea = All;
             }
         }
