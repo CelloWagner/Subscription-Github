@@ -32,6 +32,15 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                     RunObject = report "BCT Subscription Customers";
                     ApplicationArea = All;
                 }
+
+                action("BVE Test")
+                {
+                    Caption = 'BVE Test';
+                    image = Report;
+                    RunObject = page PageBVE_TestList;
+                    ApplicationArea = All;
+                }
+
             }
         }
     }
