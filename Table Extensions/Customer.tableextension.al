@@ -11,7 +11,7 @@ tableextension 50103 "BCT Customer Ext" extends Customer
             Editable = false;
         }
 
-        field(50200; "BVE_Test"; Text[50])
+        field(50204; "BVE_Test"; Text[50])
         {
             Caption = 'Description BVE';
         }
@@ -30,7 +30,7 @@ tableextension 50103 "BCT Customer Ext" extends Customer
             Caption = 'PBA Test';
             DataClassification = CustomerContent;
         }
-         field(50201; RMA_Test; Text[50])
+        field(50201; RMA_Test; Text[50])
         {
             DataClassification = ToBeClassified;
         }
@@ -38,7 +38,7 @@ tableextension 50103 "BCT Customer Ext" extends Customer
         {
             Caption = 'JC_Test';
         }
-         field(50206; "DC Test"; Text[50])
+        field(50206; "DC Test"; Text[50])
         {
 
         }
