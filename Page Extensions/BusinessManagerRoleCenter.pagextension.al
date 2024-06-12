@@ -16,10 +16,9 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 Caption = 'JS';
                 image = User;
                 RunObject = page JS_TestList;
-                ApplicationArea = All;
-
+                ApplicationArea = All;     
+    
             }
-        }
             action("PBA Test")
             {
                 Caption = 'PBA  Test';
@@ -33,6 +32,13 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 image = Absence;
                 RunObject = page "RMA Test List";
                                 ApplicationArea = All;
+            }
+            action("JC_Test")
+            {
+                Caption = 'JC Test';
+                RunObject = page JC_TestList;
+                ApplicationArea = All;
+                Image = ListPage;
             }
         }
         addafter("Create Vendor Payments")

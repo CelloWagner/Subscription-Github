@@ -8,6 +8,7 @@ codeunit 50102 "BCT SubscriptionInstall"
         JS_Test('JS', 'Jan Saltenberger');
         PBATest();
         RMA_Test();
+        JC_TEST();
     end;
 
     trigger OnInstallAppPerDatabase();
@@ -48,5 +49,14 @@ codeunit 50102 "BCT SubscriptionInstall"
         RMATable.Validate(Code, 'RMA');
         RMATable.Validate(Description, 'Rubén Miranda');
         RMATable.Insert(true);
+    end;
+    procedure "JC_TEST"()
+    var
+        JC_Test: Record JC_Test;
+    begin
+        JC_Test.Init();
+        JC_Test.Code := 'JC';
+        JC_Test.Description := 'Jack Callaghan';
+        if JC_Test.Insert() then;
     end;
 }
