@@ -5,6 +5,8 @@ codeunit 50102 "BCT SubscriptionInstall"
     trigger OnInstallAppPerCompany();
     begin
         // Instantiate variables needed for the extension
+
+        Sun_Test();
         CLP_TEST();
         JS_Test('JS', 'Jan Saltenberger');
         PBATest();
@@ -92,5 +94,14 @@ codeunit 50102 "BCT SubscriptionInstall"
         DCTest.Description := 'David Currie';
         if DCTest.Insert() then
         ;
+    end;
+
+    local procedure Sun_Test()
+    var
+        MyRec: Record "Sun_Test";
+    begin
+        MyRec.Code := 'Sun_Test';
+        MyRec.Description := 'This is Init test for Sun.';
+        MyRec.Insert();
     end;
 }
