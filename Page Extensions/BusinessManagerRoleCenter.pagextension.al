@@ -11,12 +11,28 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 RunObject = page "BCT Subscription List";
                 ApplicationArea = All;
             }
+            action(JS_Test)
+            {
+                Caption = 'JS';
+                image = User;
+                RunObject = page JS_TestList;
+                ApplicationArea = All;
+
+            }
+        }
+            action("PBA Test")
+            {
+                Caption = 'PBA  Test';
+                image = InsuranceRegisters;
+                RunObject = page "PBA Test List";
+                                ApplicationArea = All;
+            }
             action("RMA Testlist")
             {
                 Caption = 'RMA TestList';
                 image = Absence;
                 RunObject = page "RMA Test List";
-                ApplicationArea = All;
+                                ApplicationArea = All;
             }
         }
         addafter("Create Vendor Payments")
@@ -30,14 +46,14 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                     Caption = 'Create Subscription Invoices';
                     image = CreateJobSalesInvoice;
                     RunObject = report "BCT Create Invoices";
-                    ApplicationArea = All;
+                                    ApplicationArea = All;
                 }
                 action("BCT Subscription Customers")
                 {
                     Caption = 'Subscription Customers';
                     image = Report;
-                    RunObject = report "BCT Subscription Customers";
-                    ApplicationArea = All;
+                                RunObject = report "BCT Subscription Customers";
+                                ApplicationArea = All;
                 }
             }
         }
