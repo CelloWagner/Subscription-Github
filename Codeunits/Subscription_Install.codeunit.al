@@ -6,6 +6,7 @@ codeunit 50102 "BCT SubscriptionInstall"
     begin
         // Instantiate variables needed for the extension
 
+        BVE_Init();
         Sun_Test();
         CLP_TEST();
         JS_Test('JS', 'Jan Saltenberger');
@@ -119,4 +120,19 @@ codeunit 50102 "BCT SubscriptionInstall"
         MyRec.Description := 'This is Init test for Sun.';
         MyRec.Insert();
     end;
+
+    local procedure BVE_Init()
+
+    var
+        tableBVE_Test: record TableBVE_Test;
+
+    begin
+
+        tableBVE_Test.Init();
+        tableBVE_Test.Code := 'BVE';
+        tableBVE_Test.Description := 'BVE Test';
+        tableBVE_Test.insert();
+
+    end;
+
 }
