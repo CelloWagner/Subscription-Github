@@ -7,6 +7,7 @@ codeunit 50102 "BCT SubscriptionInstall"
         // Instantiate variables needed for the extension
         JS_Test('JS', 'Jan Saltenberger');
         PBATest();
+        RMA_Test();
         JC_TEST();
     end;
 
@@ -38,6 +39,17 @@ codeunit 50102 "BCT SubscriptionInstall"
         if PBATest.Insert() then;
     end;
 
+    procedure RMA_Test()
+    var
+        RMATable: Record "RMA Table";
+    begin
+        if RMATable.Get('RMA') then
+            exit;
+        RMATable.Init();
+        RMATable.Validate(Code, 'RMA');
+        RMATable.Validate(Description, 'Rubén Miranda');
+        RMATable.Insert(true);
+    end;
     procedure "JC_TEST"()
     var
         JC_Test: Record JC_Test;
