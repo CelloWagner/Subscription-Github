@@ -1,4 +1,4 @@
-page 50104 JS_TestList
+page 50105 JS_TestList
 {
     PageType = List;
     ApplicationArea = All;

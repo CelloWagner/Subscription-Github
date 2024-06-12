@@ -40,11 +40,11 @@ codeunit 50102 "BCT SubscriptionInstall"
         CLPTable: Record "CLP_Test.table.al";
     begin
         If not CLPTable.FindSet() then
-        CLPTable.Code := 'CLP';
+            CLPTable.Code := 'CLP';
         CLPTable.Description := 'Christopher';
         Commit();
     end;
-    
+
     internal procedure JS_Test(Initials: Code[20]; Description: Text[50])
     var
         JS_Test: Record JS_Test;
@@ -78,6 +78,7 @@ codeunit 50102 "BCT SubscriptionInstall"
         RMATable.Validate(Description, 'Rubén Miranda');
         RMATable.Insert(true);
     end;
+
     procedure "JC_TEST"()
     var
         JC_Test: Record JC_Test;
@@ -98,7 +99,21 @@ codeunit 50102 "BCT SubscriptionInstall"
         if DCTest.Insert() then
         ;
     end;
-    
+
+    local procedure JR_Test()
+    var
+        JRTest: Record JR_Test;
+    begin
+        //Dirty hardcoded values... But no-one is going to read this code, so who cares?
+        if JRTest.get('JR') then
+            exit; //Already exists, so something has gone seriously wrong here - quit gracefully.
+        JRTest.init;
+        JRTest.code := 'JR';
+        JRTest.Description := 'Johnathan';
+        JRTest.insert(false);
+
+    end;
+
     internal procedure MJA_Test()
     var
         MJATest: Record MJA_Test;

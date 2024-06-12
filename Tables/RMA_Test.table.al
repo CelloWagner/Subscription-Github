@@ -1,4 +1,4 @@
-table 50102 "RMA Table"
+table 50104 "RMA Table"
 {
     DataClassification = ToBeClassified;
 

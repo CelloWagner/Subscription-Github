@@ -1,4 +1,4 @@
-table 50102 JS_Test
+table 50103 JS_Test
 {
     DataClassification = CustomerContent;
 
