@@ -11,6 +11,12 @@ pageextension 50100 "BCT BusinessManager RC Ext" extends "Business Manager Role 
                 RunObject = page "BCT Subscription List";
                 ApplicationArea = All;
             }
+            action("CA Test")
+            {
+                Caption = 'CA Test';
+                RunObject = page "CA Test List";
+                ApplicationArea = All;
+            }
         }
         addafter("Create Vendor Payments")
         {

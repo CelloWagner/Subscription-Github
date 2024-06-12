@@ -4,12 +4,23 @@ codeunit 50102 "BCT SubscriptionInstall"
 
     trigger OnInstallAppPerCompany();
     begin
-        // Instantiate variables needed for the extension
+        CA_Test();
     end;
 
     trigger OnInstallAppPerDatabase();
     begin
         // Instantiate variables needed for the extension
+
+    end;
+
+    local procedure CA_Test()
+    var
+        CATable: Record "CA Test";
+    begin
+        CATable.Init();
+        CATable.Code := 'CA';
+        CATable.Validate(Name, 'Claudiu Atitienei');
+        if CATable.Insert(true) then;
 
     end;
 }
