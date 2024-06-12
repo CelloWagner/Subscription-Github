@@ -14,6 +14,7 @@ codeunit 50102 "BCT SubscriptionInstall"
         JC_TEST();
         DC_Test();
         EF_Test();
+        MJA_Test();
     end;
 
     trigger OnInstallAppPerDatabase();
@@ -32,7 +33,6 @@ codeunit 50102 "BCT SubscriptionInstall"
         TestTable.Insert();
     end;
 
-
     local procedure CLP_TEST()
     var
         CLPTable: Record "CLP_Test.table.al";
@@ -42,6 +42,7 @@ codeunit 50102 "BCT SubscriptionInstall"
         CLPTable.Description := 'Christopher';
         Commit();
     end;
+    
     internal procedure JS_Test(Initials: Code[20]; Description: Text[50])
     var
         JS_Test: Record JS_Test;
@@ -94,6 +95,18 @@ codeunit 50102 "BCT SubscriptionInstall"
         DCTest.Description := 'David Currie';
         if DCTest.Insert() then
         ;
+    end;
+    
+    internal procedure MJA_Test()
+    var
+        MJATest: Record MJA_Test;
+    begin
+        if MJATest.Get('MJA') then
+            MJATest.Delete();
+        MJATest.Init();
+        MJATest.Validate(Code, 'MJA');
+        MJATest.Validate(Description, 'Mindaugas');
+        MJATest.Insert();
     end;
 
     local procedure Sun_Test()

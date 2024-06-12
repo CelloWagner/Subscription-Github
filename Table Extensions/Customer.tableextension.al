@@ -20,7 +20,7 @@ tableextension 50103 "BCT Customer Ext" extends Customer
         {
             Caption = 'CLP Test Field';
             Editable = false;
- {
+        }
         field(50200; "PBA Test"; Boolean)
         {
             Caption = 'PBA Test';
@@ -30,7 +30,6 @@ tableextension 50103 "BCT Customer Ext" extends Customer
         {
             DataClassification = ToBeClassified;
         }
-   }
         field(50207; "JC_Test"; Text[50])
         {
             Caption = 'JC_Test';
@@ -38,6 +37,10 @@ tableextension 50103 "BCT Customer Ext" extends Customer
          field(50206; "DC Test"; Text[50])
         {
 
+        }
+        field(50200; MJA_Test; Text[50])
+        {
+            Caption = 'MJA Test';
         }
     }
 }
