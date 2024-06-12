@@ -1,1 +1,3 @@
-﻿{"Added":[],"Modified":[],"Removed":[]}
+
+﻿{"Added":[{"Id":50103,"Kind":17,"Name":"BCT Customer Ext","Namespace":""},{"Id":50104,"Kind":12,"Name":"CLP_TestLisl","Namespace":""},{"Id":50102,"Kind":10,"Name":"CLP_Test.table.al","Namespace":""}],"Modified":[{"Id":50100,"Kind":16,"Name":"BCT BusinessManager RC Ext","Namespace":""},{"Id":50102,"Kind":11,"Name":"BCT SubscriptionInstall","Namespace":""}],"Removed":[{"Id":50100,"Kind":17,"Name":"BCT Customer Ext","Namespace":""}]}
+
