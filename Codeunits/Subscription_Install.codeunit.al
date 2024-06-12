@@ -5,28 +5,40 @@ codeunit 50102 "BCT SubscriptionInstall"
     trigger OnInstallAppPerCompany();
     begin
         // Instantiate variables needed for the extension
-        MJA_Test();
+        CLP_TEST();
         JS_Test('JS', 'Jan Saltenberger');
         PBATest();
+        RMA_Test();
         JC_TEST();
+        DC_Test();
+        EF_Test();
+        MJA_Test();
     end;
 
     trigger OnInstallAppPerDatabase();
     begin
         // Instantiate variables needed for the extension
-
     end;
 
-    internal procedure MJA_Test()
+    local procedure EF_Test()
     var
-        MJATest: Record MJA_Test;
+        TestTable: Record "EF Test";
     begin
-        if MJATest.Get('MJA') then
-            MJATest.Delete();
-        MJATest.Init();
-        MJATest.Validate(Code, 'MJA');
-        MJATest.Validate(Description, 'Mindaugas');
-        MJATest.Insert();
+        IF TestTable.get('EF') then exit;
+        TestTable.Init();
+        TestTable.Code := 'EF';
+        Testtable.Description := 'Eythor';
+        TestTable.Insert();
+    end;
+
+    local procedure CLP_TEST()
+    var
+        CLPTable: Record "CLP_Test.table.al";
+    begin
+        If not CLPTable.FindSet() then
+        CLPTable.Code := 'CLP';
+        CLPTable.Description := 'Christopher';
+        Commit();
     end;
     
     internal procedure JS_Test(Initials: Code[20]; Description: Text[50])
@@ -51,6 +63,17 @@ codeunit 50102 "BCT SubscriptionInstall"
         if PBATest.Insert() then;
     end;
 
+    procedure RMA_Test()
+    var
+        RMATable: Record "RMA Table";
+    begin
+        if RMATable.Get('RMA') then
+            exit;
+        RMATable.Init();
+        RMATable.Validate(Code, 'RMA');
+        RMATable.Validate(Description, 'Rubén Miranda');
+        RMATable.Insert(true);
+    end;
     procedure "JC_TEST"()
     var
         JC_Test: Record JC_Test;
@@ -59,5 +82,28 @@ codeunit 50102 "BCT SubscriptionInstall"
         JC_Test.Code := 'JC';
         JC_Test.Description := 'Jack Callaghan';
         if JC_Test.Insert() then;
+    end;
+
+    local procedure DC_Test()
+    var
+        DCTest: Record "DC Test";
+    begin
+        DCTest.Init();
+        DCTest.Code := 'DC';
+        DCTest.Description := 'David Currie';
+        if DCTest.Insert() then
+        ;
+    end;
+    
+    internal procedure MJA_Test()
+    var
+        MJATest: Record MJA_Test;
+    begin
+        if MJATest.Get('MJA') then
+            MJATest.Delete();
+        MJATest.Init();
+        MJATest.Validate(Code, 'MJA');
+        MJATest.Validate(Description, 'Mindaugas');
+        MJATest.Insert();
     end;
 }
